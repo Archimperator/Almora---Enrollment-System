@@ -1,170 +1,46 @@
 :root {
-  --primary-color: #0c2340;   /* Seattle Navy - Headers & Titles */
-  --accent-color: #005c5c;    /* Seattle Teal/Emerald - Primary Buttons */
-  --accent-hover: #004242;    /* Darker Teal - Button Hover */
-  --error-color: #dc2626;     /* Red - Validation Errors */
-  --success-bg: #d1fae5;      /* Light Green - Status Banner */
-  --success-text: #065f46;
-  --bg-color: #f8fafc;        /* Soft Off-White Page Background */
-  --card-bg: #ffffff;        /* Pure White Card Background */
-  --border-color: #cbd5e1;   /* Neutral Gray Borders */
-  --text-dark: #1e293b;      /* Dark Charcoal Body Text */
+  --primary-dark: #333f48;
+  --burnt-orange: #bf5700;
+  --orange-hover: #994500;
+  --bg-light: #f8fafc;
+  --card-bg: #ffffff;
+  --border-color: #cbd5e1;
+  --text-main: #1e293b;
 }
 
-* {
-  box-sizing: border-box;
+/* Base Body */
+body {
+  background-color: var(--bg-light);
+  color: var(--text-main);
   font-family: Arial, sans-serif;
 }
 
-body {
-  background-color: var(--bg-color);
-  color: var(--text-dark);
-  margin: 0;
-  padding: 30px 15px;
-}
-
+/* Card Container */
 .container {
-  max-width: 800px;
-  margin: 0 auto;
   background: var(--card-bg);
-  padding: 25px;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(12, 35, 64, 0.08);
-  border-top: 5px solid var(--primary-color);
+  border-top: 5px solid var(--burnt-orange);
+  box-shadow: 0 4px 12px rgba(51, 63, 72, 0.1);
 }
 
-h2, h3 {
-  color: var(--primary-color);
-  margin-top: 0;
+/* Headers & Labels */
+h2, h3, label {
+  color: var(--primary-dark);
 }
 
-/* Layout Grid */
-.row {
-  display: flex;
-  gap: 15px;
-}
-
-.col {
-  flex: 1;
-}
-
-.form-group {
-  margin-bottom: 15px;
-}
-
-label {
-  display: block;
-  font-weight: bold;
-  font-size: 14px;
-  margin-bottom: 5px;
-  color: var(--primary-color);
-}
-
-input[type="text"],
-input[type="email"],
-select {
-  width: 100%;
-  padding: 9px 12px;
-  border: 1px solid var(--border-color);
-  border-radius: 4px;
-  font-size: 14px;
-  color: var(--text-dark);
-  background-color: #fff;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
-}
-
-input:focus, select:focus {
-  outline: none;
-  border-color: var(--accent-color);
-  box-shadow: 0 0 0 3px rgba(0, 92, 92, 0.15);
-}
-
-/* Validation Styling */
-input.invalid, select.invalid {
-  border-color: var(--error-color);
-  background-color: #fef2f2;
-}
-
-.err {
-  color: var(--error-color);
-  font-size: 12px;
-  display: block;
-  margin-top: 3px;
-  min-height: 14px;
-}
-
-.status-msg {
-  padding: 12px;
-  margin-bottom: 15px;
-  border-radius: 4px;
-  display: none;
-  font-weight: bold;
-  text-align: center;
-}
-
-.status-msg.success {
-  display: block;
-  background-color: var(--success-bg);
-  color: var(--success-text);
-  border: 1px solid #a7f3d0;
-}
-
-/* Button */
+/* Primary Submit Button (10% Accent) */
 #submitBtn {
-  background-color: var(--accent-color);
+  background-color: var(--burnt-orange);
   color: #ffffff;
   border: none;
-  padding: 12px 20px;
-  font-size: 16px;
   font-weight: bold;
-  border-radius: 4px;
-  cursor: pointer;
-  width: 100%;
-  transition: background-color 0.2s ease, transform 0.1s ease;
 }
 
 #submitBtn:hover {
-  background-color: var(--accent-hover);
+  background-color: var(--orange-hover);
 }
 
-#submitBtn:active {
-  transform: scale(0.99);
-}
-
-/* Table Styling */
-.table-container {
-  margin-top: 35px;
-  padding-top: 20px;
-  border-top: 2px solid #e2e8f0;
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 10px;
-}
-
-th, td {
-  border: 1px solid var(--border-color);
-  padding: 10px 12px;
-  text-align: left;
-  font-size: 14px;
-}
-
+/* Table Header */
 th {
-  background-color: var(--primary-color);
+  background-color: var(--primary-dark);
   color: #ffffff;
-  font-weight: 600;
-}
-
-tbody tr:nth-child(even) {
-  background-color: #f1f5f9;
-}
-
-/* Mobile Responsiveness */
-@media (max-width: 600px) {
-  .row {
-    flex-direction: column;
-    gap: 0;
-  }
 }
